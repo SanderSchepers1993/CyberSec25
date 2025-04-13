@@ -1,11 +1,3 @@
-# Project structure:
-- Dockerfile
-- log4shell-webapp/
-  - src/
-    - Main.java
-    - web/
-      - index.html
-      
 # Log4Shell Vulnerable Web Form Demo
 
 This is a minimal Java web application that demonstrates the CVE-2021-44228 (Log4Shell) vulnerability using a web form and Log4j 2.14.1.  
