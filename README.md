@@ -2,7 +2,6 @@
 Project structure:
 - Dockerfile
 - log4shell-webapp/
-  - pom.xml (not needed, no Maven)
   - src/
     - Main.java
     - web/
