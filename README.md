@@ -32,17 +32,6 @@ Open your browser and visit:
 
 ---
 
-## Docker Alternative
-
-If you prefer Docker:
-
-```bash
-docker build -t log4shell-webform .
-docker run -p 8080:8080 log4shell-webform
-```
-
----
-
 ## Test Payload (work in progress)
 
 Submit the following payload to the form:
