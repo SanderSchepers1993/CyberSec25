@@ -15,6 +15,12 @@ This is a minimal Java web application vulnerable to **Log4Shell (CVE-2021-44228
 - Debian/Ubuntu-based system
 - Internet access
 
+### Clone the repository:
+```bash
+git clone https://github.com/SanderSchepers1993/CyberSec25.git
+cd CyberSec25
+```
+
 ### Run the setup script:
 ```bash
 chmod +x setup.sh
@@ -22,7 +28,7 @@ chmod +x setup.sh
 ```
 
 Open your browser and visit:
-👉 [http://localhost:8080](http://localhost:8080)
+[http://localhost:8080](http://localhost:8080)
 
 ---
 
