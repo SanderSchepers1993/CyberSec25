@@ -47,7 +47,6 @@ This will be **logged by Log4j**, potentially triggering the Log4Shell exploit *
 CyberSec25/
 ├── Main.java
 ├── log4j2.xml
-├── Dockerfile
 ├── setup.sh
 ├── README.md
 └── libs/ (downloaded automatically)
