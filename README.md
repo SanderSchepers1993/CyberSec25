@@ -7,8 +7,6 @@ This is a minimal Java web application vulnerable to **Log4Shell (CVE-2021-44228
 - Simple HTML form
 - Docker or manual Java support
 
-**Intended strictly for educational and controlled testing purposes.** Never expose this to the internet.
-
 ---
 
 ## Quick Start
