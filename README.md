@@ -19,6 +19,7 @@ It is meant for **educational and testing purposes only** in isolated environmen
 ### Requirements
 
 - Docker installed
+- Docker-cli installed
 
 ### Run in 3 steps
 
