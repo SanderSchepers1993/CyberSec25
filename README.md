@@ -1,5 +1,4 @@
-/*
-Project structure:
+# Project structure:
 - Dockerfile
 - log4shell-webapp/
   - src/
