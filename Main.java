@@ -1,3 +1,39 @@
+/*
+Project structure:
+- Dockerfile
+- log4shell-webapp/
+  - Main.java
+  - log4j2.xml
+  - libs/ (contains downloaded dependencies)
+
+To build & run without Docker:
+$ sudo apt update && sudo apt install default-jdk wget -y
+$ mkdir libs && cd libs
+
+# Download Jetty dependencies
+wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar
+wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar
+wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar
+wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar
+wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar
+wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar
+
+# Download Log4j dependencies
+wget https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.14.1/log4j-api-2.14.1.jar
+wget https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.14.1/log4j-core-2.14.1.jar
+
+# Download Servlet API
+wget https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar
+
+cd ..
+
+# Compile and run
+$ javac -cp "libs/*" Main.java
+$ java -cp ".:libs/*" -Dlog4j.configurationFile=log4j2.xml Main
+*/
+
+// File: Main.java
+
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -51,4 +87,4 @@ public class Main {
             }
         }
     }
-} 
+}
