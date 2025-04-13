@@ -18,6 +18,7 @@ It is meant for **educational and testing purposes only** in isolated environmen
 
 ### Requirements
 
+- Git installed
 - Docker installed
 - Docker-cli installed
 
