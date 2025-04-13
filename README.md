@@ -5,7 +5,7 @@ This is a minimal Java web application vulnerable to **Log4Shell (CVE-2021-44228
 - Java + Jetty (embedded)
 - Log4j 2.14.1 (vulnerable)
 - Simple HTML form
-- Docker or manual Java support
+- Java
 
 ---
 
