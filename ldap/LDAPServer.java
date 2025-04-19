@@ -5,8 +5,9 @@
 import com.unboundid.ldap.listener.InMemoryListenerConfig;
 import com.unboundid.ldap.listener.InMemoryDirectoryServer;
 import com.unboundid.ldap.listener.InMemoryDirectoryServerConfig;
-import com.unboundid.ldap.listener.InMemoryOperationInterceptor;
-import com.unboundid.ldap.listener.InMemoryInterceptedSearchResult;
+
+import com.unboundid.ldap.listener.interceptor.InMemoryOperationInterceptor;
+import com.unboundid.ldap.listener.interceptor.InMemoryInterceptedSearchResult;
 
 import com.unboundid.ldap.sdk.Entry;
 import com.unboundid.ldap.sdk.LDAPResult;
