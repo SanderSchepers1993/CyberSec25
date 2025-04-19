@@ -47,12 +47,16 @@ This will be **logged by Log4j**, potentially triggering the Log4Shell exploit *
 ```
 CyberSec25/
 ├── Exploit/
-      Exploit.java/class
-├── ldap/ # LDAP-SERVER (JNDI redirector)
-├── webapp/ # Kwetbare webapp (Jetty + log4j)
-│
-└── libs/ # Dependencies (via setup.sh)
-├── scripts/ @ Automatiseringsscripts
+    └── Exploit.java/class
+├── ldap/
+    └── LDAP-SERVER (JNDI redirector)
+├── webapp/
+    └── Kwetbare webapp (Jetty + log4j)
+└── libs/
+    └── Dependencies (via setup.sh)
+├── scripts/
+    ├── run_exploits.sh
+    └──setup.sh
 ├── README.md
 └── test_payload.txt # Payload voor formulierinvoer
 
