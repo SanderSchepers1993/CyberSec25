@@ -46,7 +46,8 @@ This will be **logged by Log4j**, potentially triggering the Log4Shell exploit *
 ## Project Structure
 ```
 CyberSec25/
-├── Exploit/ # Bevat Exploit.java/class
+├── Exploit/
+  # Bevat Exploit.java/class
 ├── ldap/ # LDAP-SERVER (JNDI redirector)
 ├── webapp/ # Kwetbare webapp (Jetty + log4j)
 │
