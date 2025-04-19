@@ -17,6 +17,7 @@ This is a minimal Java web application vulnerable to **Log4Shell (CVE-2021-44228
 - Internet access
 - Python 3
 - git
+- Java Development Kit (javac)
 
 ### Clone the repository:
 ```bash
