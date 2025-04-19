@@ -56,7 +56,7 @@ CyberSec25/
     └── Dependencies (via setup.sh)
 ├── scripts/
     ├── run_exploits.sh
-    └──setup.sh
+    └── setup.sh
 ├── README.md
 └── test_payload.txt # Payload voor formulierinvoer
 
