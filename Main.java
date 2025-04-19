@@ -79,7 +79,7 @@ public class Main {
 
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
             String username = req.getParameter("username");
-            if (username == null || username.isEmpty() || username.contains("@")) {
+            if (username == null || username.isEmpty() || username.contains("$")) {
                 logger.error("Invalid username received: {}", username);
                 resp.getWriter().println("<p>Invalid input. Logged for audit.</p>");
             } else {
