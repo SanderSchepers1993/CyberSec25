@@ -2,8 +2,15 @@
 // Auteur: Sander Schepers - Project CyberSec25
 // Beschrijving: LDAP-server om Log4Shell (CVE-2021-44228) payloads te demonstreren.
 
-import com.unboundid.ldap.listener.*;
-import com.unboundid.ldap.sdk.*;
+import com.unboundid.ldap.listener.InMemoryListenerConfig;
+import com.unboundid.ldap.listener.InMemoryDirectoryServer;
+import com.unboundid.ldap.listener.InMemoryDirectoryServerConfig;
+import com.unboundid.ldap.listener.interceptor.InMemoryOperationInterceptor;
+import com.unboundid.ldap.listener.interceptor.InMemoryInterceptedSearchResult;
+
+import com.unboundid.ldap.sdk.Entry;
+import com.unboundid.ldap.sdk.LDAPResult;
+import com.unboundid.ldap.sdk.ResultCode;
 
 public class LDAPServer {
 
