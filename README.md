@@ -59,7 +59,7 @@ CyberSec25/
     ├── run_exploits.sh
     └── setup.sh
 ├── README.md
-└── test_payload.txt # Payload voor formulierinvoer
+└── test_payload.txt
 ```
 
 ---
