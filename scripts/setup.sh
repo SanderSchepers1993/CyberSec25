@@ -6,7 +6,10 @@ echo "Installing Java..."
 sudo apt update
 sudo apt install -y default-jdk wget
 
-echo "Creating libs/ folder..."
+echo "[*] Preparing webapp environment"
+cd "$(dirname "$0")/../webapp"
+
+echo "[*] Creating libs/ folder..."
 mkdir -p libs
 cd libs
 
@@ -33,6 +36,8 @@ cd ..
 echo "Compiling Main.java..."
 javac -cp "libs/*" Main.java
 
+echo "[*] Starting vulnerable web app..."
+java -cp ".:libs/*" -Dlog4j.configurationFile=log4j2.xml Main
 echo "Starting vulnerable web app..."
 echo "Visit http://localhost:8080 to test."
 java -cp ".:libs/*" -Dlog4j.configurationFile=log4j2.xml Main
