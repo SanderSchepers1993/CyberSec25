@@ -4,8 +4,9 @@ This is a minimal Java web application vulnerable to **Log4Shell (CVE-2021-44228
 
 - Java + Jetty (embedded)
 - Log4j 2.14.1 (vulnerable)
+- LDAP-server voor JNDI-exploits
 - Simple HTML form
-- Java
+- Java exploit payload ('Exploit.class')
 
 ---
 
@@ -45,11 +46,15 @@ This will be **logged by Log4j**, potentially triggering the Log4Shell exploit *
 ## Project Structure
 ```
 CyberSec25/
-├── Main.java
-├── log4j2.xml
-├── setup.sh
+├── Exploit/ # Bevat Exploit.java/class
+├── ldap/ # LDAP-SERVER (JNDI redirector)
+├── webapp/ # Kwetbare webapp (Jetty + log4j)
+│
+└── libs/ # Dependencies (via setup.sh)
+├── scripts/ @ Automatiseringsscripts
 ├── README.md
-└── libs/ (downloaded automatically)
+└── test_payload.txt # Payload voor formulierinvoer
+
 ```
 
 ---
