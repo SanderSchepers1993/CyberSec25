@@ -15,6 +15,7 @@ if [ ! -f "$LDAP_JAR" ]; then
 fi
 
 # Compile exploit class
+cd ..
 cd exploit
 javac Exploit.java
 cd ..
