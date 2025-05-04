@@ -61,15 +61,17 @@ public class Main {
     public static class IndexServlet extends HttpServlet {
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
             resp.setContentType("text/html");
-            resp.getWriter().println("""
-                <html><body>
-                <h2>Enter Username</h2>
-                <form method='POST' action='/submit'>
-                    <input type='text' name='username' />
-                    <input type='submit' />
-                </form>
-                </body></html>
-            """);
+                resp.getWriter().println("<html>");
+                resp.getWriter().println("<head><title>Kwetsbare Webapp</title></head>");
+                resp.getWriter().println("<body>");
+                resp.getWriter().println("<h1>Log4Shell demo</h1>");
+                resp.getWriter().println("<form method='GET'>");
+                resp.getWriter().println("<label for='user'>Gebruikersnaam:</label>");
+                resp.getWriter().println("<input type='text' name='user' />");
+                resp.getWriter().println("<input type='submit' />");
+                resp.getWriter().println("</form>");
+                resp.getWriter().println("</body>");
+                resp.getWriter().println("</html>");
         }
     }
 
