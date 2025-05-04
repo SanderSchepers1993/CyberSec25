@@ -3,14 +3,18 @@ set -e
 
 echo "[*] Fixing attacker setup for LDAP exploit..."
 
-# Pad naar de jar
-LDAP_JAR="../webapp/libs/unboundid-ldapsdk-4.0.14.jar"
+# Bepaal project root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(realpath "$SCRIPT_DIR/..")"
+LDAP_DIR="$PROJECT_ROOT/ldap"
+LIB_DIR="$PROJECT_ROOT/webapp/libs"
+LDAP_JAR="$LIB_DIR/unboundid-ldapsdk-4.0.14.jar"
 LDAP_JAR_URL="https://repo1.maven.org/maven2/com/unboundid/unboundid-ldapsdk/4.0.14/unboundid-ldapsdk-4.0.14.jar"
 
 # 1. Maak libs-map aan indien nodig
-if [ ! -d "../webapp/libs" ]; then
+if [ ! -d "$LIB_DIR" ]; then
     echo "[*] Creating libs directory..."
-    mkdir -p ../webapp/libs
+    mkdir -p "$LIB_DIR"
 fi
 
 # 2. Download JAR als die ontbreekt
@@ -26,6 +30,7 @@ fi
 
 # 3. Compileer LDAPServer.java
 echo "[*] Compiling LDAPServer.java..."
+cd "$LDAP_DIR"
 javac -cp ".:$LDAP_JAR" LDAPServer.java || {
     echo "[-] Compilation failed. Check for syntax errors or missing files."
     exit 1
