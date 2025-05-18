@@ -18,13 +18,13 @@ wget -q --show-progress https://github.com/AdoptOpenJDK/openjdk8-binaries/releas
 echo "[*] Extracting JDK..."
 tar -xzf OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz
 sudo mkdir -p /opt/java
-sudo mv jdk8u232-b09 /opt/java/java8ubeta
+sudo mv jdk8u232-b09 /opt/java/java8u232
 
 echo "[*] Configuring java and javac alternatives..."
-sudo update-alternatives --install /usr/bin/java java /opt/java/java8ubeta/bin/java 1
-sudo update-alternatives --install /usr/bin/javac javac /opt/java/java8ubeta/bin/javac 1
-sudo update-alternatives --set java /opt/java/java8ubeta/bin/java
-sudo update-alternatives --set javac /opt/java/java8ubeta/bin/javac
+sudo update-alternatives --install /usr/bin/java java /opt/java/java8u232/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /opt/java/java8u232/bin/javac 1
+sudo update-alternatives --set java /opt/java/java8u232/bin/java
+sudo update-alternatives --set javac /opt/java/java8u232/bin/javac
 
 echo "[*] Java version set to:"
 java -version
