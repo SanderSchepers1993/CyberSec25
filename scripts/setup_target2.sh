@@ -11,7 +11,7 @@ cd ~
 wget --show-progress https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u-2021-07-26-19-42-beta/OpenJDK8U-jdk_x64_linux_hotspot_2021-07-26-19-42.tar.gz
 
 echo "[*] Extracting JDK..."
-tar -xzf OpenJDK8U-jdk_x64_linux_hotspot_2021-11-17-22-03.tar.gz
+tar -xzf OpenJDK8U-jdk_x64_linux_hotspot_2021-07-26-19-42.tar.gz
 sudo mkdir -p /opt/java
 sudo mv jdk8u302-b08 /opt/java/java8ubeta
 
