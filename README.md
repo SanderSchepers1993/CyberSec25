@@ -14,6 +14,7 @@ Bevat de kwetsbare Java-webapp met Log4j 2.14.1.
 ### Stappen:
 ```bash
 sudo apt update && sudo apt install -y default-jdk wget
+sudo apt install git
 git clone https://github.com/SanderSchepers1993/CyberSec25.git
 cd CyberSec25/scripts
 chmod +x setup_target.sh
