@@ -50,7 +50,7 @@ public class Main {
             if (username == null || username.isEmpty()) {
                 resp.getWriter().println("<p>Lege invoer ontvangen.</p>");
             } else {
-                logger.error("Gebruikersinvoer ontvangen: {}", username);
+                logger.error("Gebruikersinvoer ontvangen: " + username);
                 resp.getWriter().println("<p>Invoer ontvangen. Gelogd.</p>");
             }
         }
