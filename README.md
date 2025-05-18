@@ -20,8 +20,9 @@ sudo ./setup_target.sh
 ```
 Het script zal de nodige libraries installeren om een jetty webapplicatie op te stellen.
 
-Deze wordt vervolgens gehost op: [http://target-ip:8080].
+Deze wordt vervolgens gehost op: [http://localhost:8080].
 
+Je target VM is opgezet.
 ---
 
 ## ⚔️ Attacker VM (Kali)
