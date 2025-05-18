@@ -69,7 +69,7 @@ fi
 
 echo "[*] Starting HTTP server in $EXPLOIT_DIR..."
 cd "$EXPLOIT_DIR"
-python3 -m http.server 8000 > /dev/null 2>&1 &
+python3 -m http.server 8000 &
 HTTP_PID=$!
 echo "[+] HTTP server running on port 8000 (PID: $HTTP_PID)"
 
