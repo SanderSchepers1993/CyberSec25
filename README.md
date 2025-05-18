@@ -12,13 +12,14 @@ Bevat de kwetsbare Java-webapp met Log4j 2.14.1.
 - Java JDK
 
 ### Stappen:
+Open op je VM een terminal, je zal zien dat in je home directory een file CyberSec25 aanwezig is.
 ```bash
 cd CyberSec25/scripts
 chmod +x setup_target.sh
-./setup_target.sh
+sudo ./setup_target.sh
 ```
-
-Bezoek de webapp op: [http://<target-ip>:8080](http://<target-ip>:8080)
+Het script zal de nodige libraries installeren om een jetty webapplicatie op te stellen.
+Deze wordt vervolgens gehost op: [http://target-ip:8080].
 
 ---
 
