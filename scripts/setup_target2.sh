@@ -25,7 +25,7 @@ echo "[*] Java version set to:"
 java -version
 
 echo "[*] Preparing vulnerable webapp..."
-cd ~/CyberSec25/webapp
+cd /home/vboxuser/CyberSec25/webapp
 
 if [ ! -f "javax.servlet-api-4.0.1.jar" ]; then
     echo "[*] Downloading javax.servlet-api..."
