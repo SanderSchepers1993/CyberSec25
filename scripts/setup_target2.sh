@@ -2,6 +2,8 @@
 
 set -e
 
+USER_HOME="/home/vboxuser"
+
 echo "[*] Installing dependencies..."
 sudo apt update
 sudo apt install -y wget unzip curl
@@ -25,7 +27,7 @@ echo "[*] Java version set to:"
 java -version
 
 echo "[*] Preparing vulnerable webapp..."
-cd /home/vboxuser/CyberSec25/webapp
+cd "$USER_HOME/CyberSec25/webapp"
 
 if [ ! -f "javax.servlet-api-4.0.1.jar" ]; then
     echo "[*] Downloading javax.servlet-api..."
