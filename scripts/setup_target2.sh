@@ -8,10 +8,10 @@ sudo apt install -y wget unzip curl
 
 echo "[*] Downloading Eclipse Temurin JDK 8u beta from 2021-11-17..."
 cd ~
-wget --show-progress https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u-2021-11-17-22-03-beta/OpenJDK8U-jdk_x64_linux_hotspot_2021-11-17-22-03-beta.tar.gz
+wget --show-progress https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u-2021-11-17-22-03-beta/OpenJDK8U-jdk_x64_linux_hotspot_2021-11-17-22-03.tar.gz
 
 echo "[*] Extracting JDK..."
-tar -xzf OpenJDK8U-jdk_x64_linux_hotspot_2021-11-17-22-03-beta.tar.gz
+tar -xzf OpenJDK8U-jdk_x64_linux_hotspot_2021-11-17-22-03.tar.gz
 sudo mkdir -p /opt/java
 sudo mv jdk8u-* /opt/java/java8ubeta
 
