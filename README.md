@@ -29,7 +29,7 @@ Je target VM is opgezet.
 Start een LDAP- en HTTP-server om een exploit via JNDI te leveren.
 
 ### Vereisten:
-- Kali Linux (https://raw.githubusercontent.com/DenzelBasteleus/VmSoftware/refs/heads/main/vm_softwareLinux.sh)
+- Installatie script attacker VM (https://raw.githubusercontent.com/DenzelBasteleus/VmSoftware/refs/heads/main/vm_softwareLinux.sh)
 
 ### Stappen:
 ```bash
