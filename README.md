@@ -46,6 +46,7 @@ De exploit zal een reverse-shell starten vanop de target VM.
 Hiervoor moeten we een listener opzetten:
 ```bash
 nc -lvnp 4444
+```
 ---
 
 ## 📁 Structuur
