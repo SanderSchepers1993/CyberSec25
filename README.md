@@ -37,6 +37,9 @@ cd CyberSec25/scripts
 chmod +x setup_attacker.sh
 ./setup_attacker.sh
 ```
+Browse via je webbrowser naar de webapplicatie van je target VM.
+
+Dit is normaal gezien <target VM IP>:8080
 
 Gebruik de volgende payload in het formulier op de target:
 ```text
