@@ -19,6 +19,7 @@ chmod +x setup_target.sh
 sudo ./setup_target.sh
 ```
 Het script zal de nodige libraries installeren om een jetty webapplicatie op te stellen.
+
 Deze wordt vervolgens gehost op: [http://target-ip:8080].
 
 ---
