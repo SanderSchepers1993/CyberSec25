@@ -8,8 +8,7 @@ Deze demo toont hoe de Log4Shell-kwetsbaarheid werkt door een gesplitste omgevin
 Bevat de kwetsbare Java-webapp met Log4j 2.14.1.
 
 ### Vereisten:
-- Debian/Ubuntu
-- Java JDK
+- Installatie script target VM (https://raw.githubusercontent.com/DenzelBasteleus/VmSoftware/refs/heads/main/vm_softwaredebian.sh)
 
 ### Stappen:
 Open op je VM een terminal, je zal zien dat in je home directory een file CyberSec25 aanwezig is.
@@ -23,15 +22,14 @@ Het script zal de nodige libraries installeren om een jetty webapplicatie op te 
 Deze wordt vervolgens gehost op: [http://localhost:8080].
 
 Je target VM is opgezet.
+
 ---
 
 ## ⚔️ Attacker VM (Kali)
 Start een LDAP- en HTTP-server om een exploit via JNDI te leveren.
 
 ### Vereisten:
-- Kali Linux
-- Java JDK
-- Python3
+- Kali Linux (https://raw.githubusercontent.com/DenzelBasteleus/VmSoftware/refs/heads/main/vm_softwareLinux.sh)
 
 ### Stappen:
 ```bash
