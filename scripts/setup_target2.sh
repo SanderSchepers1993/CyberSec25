@@ -61,7 +61,10 @@ javac -cp "libs/*" Main.java
 
 # Start webapp
 echo "[*] Starting vulnerable webapp on port 8080..."
-java -cp "libs/*:." -Dlog4j.configurationFile=log4j2.xml Main &
+java -Dcom.sun.jndi.ldap.object.trustURLCodebase=true \
+     -cp "libs/*:." \
+     -Dlog4j.configurationFile=log4j2.xml \
+     Main &
 WEBAPP_PID=$!
 echo "[✔] Webapp gestart (PID: $WEBAPP_PID)"
 echo "    Open in browser: http://localhost:8080"
