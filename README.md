@@ -60,7 +60,8 @@ CyberSec25/
 ├── scripts/
 │   ├── setup_target.sh
 │   └── setup_attacker.sh
-└── log4j2.xml
+├── log4j2.xml
+└── testpayload.txt
 ```
 
 ## ⚠️ Disclaimer
