@@ -2,7 +2,7 @@
 
 set -e
 
-USER_HOME="/home/vboxuser"
+USER_HOME="/home/osboxes"
 PROJECT_ROOT="$USER_HOME/CyberSec25"
 WEBAPP_DIR="$PROJECT_ROOT/webapp"
 LIB_DIR="$WEBAPP_DIR/libs"
@@ -13,7 +13,7 @@ sudo apt install -y wget unzip curl
 
 echo "[*] Downloading Eclipse Temurin JDK 8u302..."
 cd ~
-wget -q --show-progress https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz
+wget -q https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz
 
 echo "[*] Extracting JDK..."
 tar -xzf OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz
